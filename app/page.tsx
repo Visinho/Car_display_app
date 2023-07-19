@@ -1,3 +1,5 @@
+"use client";
+
 import { Hero } from '@/components';
 import Image from 'next/image'
 

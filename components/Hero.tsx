@@ -1,9 +1,16 @@
-import React from 'react'
+"use client";
+
 import Image from "next/image";
+import CustomButton from './CustomButton';
 
-type Props = {}
 
-const Hero = (props: Props) => {
+const Hero = () => {
+
+    const handleScroll = () => {
+
+    }
+
+
   return (
     <div className='hero'>
         <div className='flex-1 pt-36 padding-x'>
@@ -14,6 +21,12 @@ const Hero = (props: Props) => {
             <p className='hero__subtitle'>
                 Streamline your car rental experience with our effortless
             </p>
+
+            <CustomButton
+                title="Explore Cars"
+                containerStyles="bg-primary-blue text-white rounded-full mt-10"
+                handleClick={handleScroll}
+            />
         </div>
     </div>
   )

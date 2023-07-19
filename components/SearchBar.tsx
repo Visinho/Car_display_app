@@ -16,7 +16,6 @@ const SearchBar = () => {
   return (
     <form className='searchbar' onClick={handleSearch}>
       <div className='searchbar__item'>
-        {/* Implementing combo box */}
         <SearchManufacturer 
             manufacturer={manufacturer}
             setManufacturer={setManufacturer}

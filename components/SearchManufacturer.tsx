@@ -51,9 +51,14 @@ const SearchManufacturer = ({
             afterLeave={() => setQuery("")}
           >
             <Combobox.Options>
+              {/* Conditional rendering for the error message */}
               {filteredManufacturers.length === 0 && query !== "" ? (
                 <p className="error-message">No results found for "{query}"</p>
-              ) : (
+              ) : null}
+
+              {/* Conditional rendering for the options */}
+              {query !== "" &&
+                // The previous map function is wrapped in a conditional check for query not being empty
                 filteredManufacturers.map((item) => (
                   <Combobox.Option
                     key={item}
@@ -64,28 +69,28 @@ const SearchManufacturer = ({
                       }`
                     }
                   >
-                    {({ selected, active}) => (
-                        <>
+                    {({ selected, active }) => (
+                      <>
                         <span
                           className={`block truncate ${
-                            selected ? 'font-medium' : 'font-normal'
+                            selected ? "font-medium" : "font-normal"
                           }`}
                         >
                           {item}
                         </span>
                         {selected ? (
-                        <span
+                          <span
                             className={`absolute inset-y-0 left-0 flex items-center pl-3 ${
-                              active ? 'text-white' : 'text-teal-600'
+                              active ? "text-white" : "text-teal-600"
                             }`}
                           >
-                        </span>
+                            {/* Additional content for selected options */}
+                          </span>
                         ) : null}
-                        </>
+                      </>
                     )}
                   </Combobox.Option>
-                ))
-              )}
+                ))}
             </Combobox.Options>
           </Transition>
         </div>
